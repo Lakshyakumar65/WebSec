@@ -14,10 +14,9 @@ border: 2px dashed #000;
 }
  <div class="link">
  Live Preview link is here you can click this link to view we 
-  https://websec-2.onrender.com                                
+  ------->https://websec-2.onrender.com                                
  </div>
 
 If you want to download it in your local storage then use
-   ___________________________________________________________
-  |  git clone https://github.com/Lakshyakumar/secrets-app.git|
-  |___________________________________________________________|
+  ------>git clone https://github.com/Lakshyakumar/secrets-app.git
+  
