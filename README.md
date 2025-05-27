@@ -7,15 +7,12 @@ Features
 -  Protected routes and access control
 -  Submit and view secrets anonymously
 -  Responsive, modern UI with Bootstrap 4 and Font Awesome
-.link{
-border: 2px dashed #000;
-  padding: 5px 10px;
-  display: inline-block;
-}
- <div class="link">
- Live Preview link is here you can click this link to view we 
-  ------->https://websec-2.onrender.com                                
- </div>
+
+  
+  <div style="border: 2px dashed #000; padding: 5px 10px; display: inline-block;">
+  Live Preview link is here — you can click this link to view:<br>
+   <a href="https://websec-2.onrender.com" target="_blank">https://websec-2.onrender.com</a>
+  </div>
 
 If you want to download it in your local storage then use
   ------>git clone https://github.com/Lakshyakumar/secrets-app.git
