@@ -1,7 +1,7 @@
 **Secrets** is a secure web application that allows users to share their secrets anonymously with a trusted community. It features user authentication, protected routes using JWT, hashed passwords with bcrypt, and a MongoDB backend.
 
 
- <span style="border: 2px solid black; padding: 5px;">Features</span>
+ <span style="border: 2px dashed white; padding: 5px;">Features</span>
 
 - User Registration & Login with validation
 -  Password encryption using `bcrypt`
