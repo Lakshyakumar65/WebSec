@@ -1,0 +1,76 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Share Your Secret</h1>
+    <p class="secret-text">Don't keep your secrets, share them anonymously!</p>
+    
+    <!-- Error Message -->
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
+    
+    <!-- Success Message -->
+    <% if (typeof success !== 'undefined' && success) { %>
+      <div class="alert alert-success" role="alert">
+        <%= success %>
+      </div>
+    <% } %>
+    
+    <form action="/submit" method="POST">
+      <div class="form-group">
+        <textarea 
+          class="form-control text-center" 
+          name="secret" 
+          placeholder="What's your secret? Share it anonymously..." 
+          rows="4"
+          maxlength="500"
+          required
+        ></textarea>
+        <small class="form-text text-muted">Maximum 500 characters. Your secret will be shared anonymously.</small>
+      </div>
+      <button type="submit" class="btn btn-dark btn-lg">
+        <i class="fas fa-paper-plane"></i> Submit Secret
+      </button>
+      <a href="/secrets" class="btn btn-secondary btn-lg ml-2">
+        <i class="fas fa-eye"></i> View All Secrets
+      </a>
+    </form>
+  </div>
+</div>
+
+<style>
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #dee2e6;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-lg {
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.alert {
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+</style>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5" id="containerr">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Error Message -->
+          <% if (typeof error !== 'undefined' && error) { %>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+          <% } %>
+
+          <!-- Password Requirements Info -->
+          <div class="alert alert-info" role="alert">
+            <h6><strong>Registration Requirements:</strong></h6>
+            <ul class="mb-0">
+              <li><strong>Name:</strong> At least 2 characters</li>
+              <li><strong>Email:</strong> Valid email format</li>
+              <li><strong>Password:</strong></li>
+              <ul>
+                <li>6-20 characters long</li>
+                <li>At least one lowercase letter (a-z)</li>
+                <li>At least one uppercase letter (A-Z)</li>
+                <li>At least one number (0-9)</li>
+              </ul>
+            </ul>
+          </div>
+
+          <form action="/register" method="POST">
+            <div class="form-group mb-3">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Enter your full name" required minlength="2" maxlength="50">
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" name="password" id="registerPassword" placeholder="Create a secure password" required>
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="toggleRegisterPassword">
+                    <i class="fas fa-eye" id="registerPasswordIcon"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">
+              <i class="fas fa-user-plus"></i> Create Account
+            </button>
+          </form>
+
+          <hr>
+          <div class="text-center">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('toggleRegisterPassword').addEventListener('click', function() {
+  const passwordField = document.getElementById('registerPassword');
+  const passwordIcon = document.getElementById('registerPasswordIcon');
+  
+  if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    passwordIcon.classList.remove('fa-eye');
+    passwordIcon.classList.add('fa-eye-slash');
+  } else {
+    passwordField.type = 'password';
+    passwordIcon.classList.remove('fa-eye-slash');
+    passwordIcon.classList.add('fa-eye');
+  }
+});
+</script>
+
+<%- include('partials/footer') %>

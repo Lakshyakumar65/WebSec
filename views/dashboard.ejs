@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <i class="fas fa-user-circle fa-6x"></i>
+    <h1 class="display-3">Welcome, <%= user.name %>!</h1>
+    <p class="lead">You have successfully logged in to your dashboard.</p>
+    <hr>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h5><i class="fas fa-user"></i> Your Account Information</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Name:</strong> <%= user.name %></p>
+            <p><strong>Email:</strong> <%= user.email %></p>
+            <% if (user.memberSince) { %>
+              <p><strong>Member Since:</strong> <%= user.memberSince %></p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    
+    <div class="btn-group" role="group">
+      <a class="btn btn-primary btn-lg" href="/secrets" role="button">
+        <i class="fas fa-key"></i> View Secrets
+      </a>
+      <a class="btn btn-success btn-lg" href="/submit" role="button">
+        <i class="fas fa-plus"></i> Submit Secret
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/logout" role="button">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
