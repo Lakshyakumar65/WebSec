@@ -15,5 +15,5 @@ Features
   </div>
 
 If you want to download it in your local storage then use
-  ------>git clone https://github.com/Lakshyakumar/secrets-app.git
+  ------>git clone https://github.com/Lakshyakumar65/WebSec.git
   
